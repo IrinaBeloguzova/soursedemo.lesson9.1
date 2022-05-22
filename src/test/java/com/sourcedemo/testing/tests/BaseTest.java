@@ -21,7 +21,6 @@ public class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         loginPage = new LoginPage(driver);
         productsListPage = new ProductsListPage(driver);
