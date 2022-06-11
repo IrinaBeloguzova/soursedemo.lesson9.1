@@ -1,6 +1,7 @@
 package com.sourcedemo.testing.tests;
 
 import com.sourcedemo.testing.pages.*;
+import com.sourcedemo.testing.utils.PropertyReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +16,7 @@ public class BaseTest {
     protected LeftMenuPage leftMenuPage;
     protected YourCartPage yourCartPage;
     protected CheckoutPage checkoutPage;
+    protected PropertyReader propertyReader;
     private WebDriver driver;
 
     @BeforeMethod
@@ -27,6 +29,7 @@ public class BaseTest {
         leftMenuPage = new LeftMenuPage(driver);
         yourCartPage = new YourCartPage(driver);
         checkoutPage = new CheckoutPage(driver);
+        propertyReader = new PropertyReader();
     }
 
     @AfterMethod(alwaysRun=true)
